@@ -1,0 +1,1 @@
+This is the first project in the javascript part in the foundations path. Rock,Paper,Scissors without GUI.
