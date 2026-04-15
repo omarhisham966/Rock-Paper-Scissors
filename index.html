@@ -32,9 +32,58 @@
             return choice
         }
 
-        function playRound(){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        function playRound(humanChoice, computerChoice){
+            if (humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === "rock"){
+                console.log('Tie')
+            }
+
+            else if(humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === "paper"){
+                console.log('You lose! Paper beats Rock')
+                computerScore = computerScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === 'Scissors'){
+                console.log("You win! Rock beats Scissors")
+                humanScore = humanScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "rock"){
+                console.log("You win! Paper beats Rock")
+                humanScore = humanScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "paper"){
+                console.log("Tie")
+            }
+
+            else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "scissors"){
+                console.log("You lose! Scissors beats Paper")
+                computerScore = computerScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "rock"){
+                console.log("You lose! Rock beats Scissors")
+                computerScore = computerScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "paper"){
+                console.log("You win! Scissors beats Paper")
+                humanScore = humanScore + 1
+            }
+
+            else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "scissors"){
+                console.log("Tie")
+            }
+        }
+
+        function playGame(){
             
         }
+
+        playRound(humanSelection, computerSelection);
 
         console.log(getHumanChoice())
 
