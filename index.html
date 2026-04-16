@@ -28,66 +28,93 @@
         }
 
         function getHumanChoice(){
-            let choice = prompt("Please Enter Your Choice: ")
+            let choice = prompt("Please Enter Your Choice: \n1.ROCK\n2.PAPER\n3.SCISSORS")
+
             return choice
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        //const humanSelection = getHumanChoice();
+        //const computerSelection = getComputerChoice();
 
         function playRound(humanChoice, computerChoice){
             if (humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === "rock"){
-                console.log('Tie')
+                alert('Tie')
             }
 
             else if(humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === "paper"){
-                console.log('You lose! Paper beats Rock')
+                alert('You lose! Paper beats Rock')
                 computerScore = computerScore + 1
             }
 
-            else if(humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === 'Scissors'){
-                console.log("You win! Rock beats Scissors")
+            else if(humanChoice.toLowerCase() === "ROCK".toLowerCase() && computerChoice === "scissors"){
+                alert("You win! Rock beats Scissors")
                 humanScore = humanScore + 1
             }
 
             else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "rock"){
-                console.log("You win! Paper beats Rock")
+                alert("You win! Paper beats Rock")
                 humanScore = humanScore + 1
             }
 
             else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "paper"){
-                console.log("Tie")
+                alert("Tie")
             }
 
             else if(humanChoice.toLowerCase() === "PAPER".toLowerCase() && computerChoice === "scissors"){
-                console.log("You lose! Scissors beats Paper")
+                alert("You lose! Scissors beats Paper")
                 computerScore = computerScore + 1
             }
 
             else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "rock"){
-                console.log("You lose! Rock beats Scissors")
+                alert("You lose! Rock beats Scissors")
                 computerScore = computerScore + 1
             }
 
             else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "paper"){
-                console.log("You win! Scissors beats Paper")
+                alert("You win! Scissors beats Paper")
                 humanScore = humanScore + 1
             }
 
             else if(humanChoice.toLowerCase() === "SCISSORS".toLowerCase() && computerChoice === "scissors"){
-                console.log("Tie")
+                alert("Tie")
             }
         }
 
         function playGame(){
-            
+            for(let i=0;i<5;i++){
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection)
+            }
+    
+            if (humanScore > computerScore) {
+                alert('You Are the Winner!')
+            }
+
+            else if (computerScore > humanScore){
+                alert('Computer is the Winner!')
+            }
+
+            else {alert("IT IS A TIE")}
+
         }
 
-        playRound(humanSelection, computerSelection);
+        
 
-        console.log(getHumanChoice())
+        /*playRound(humanSelection, computerSelection);*/
 
-        console.log(getComputerChoice())
+        /*console.log(getHumanChoice())
+
+        console.log(getComputerChoice())*/
+
+        playGame()
+
+        let proceed = prompt("Do You Want To Play Again?\n1.Yes\n2.No")
+
+        while(proceed.toLowerCase() != "NO".toLowerCase()){
+            playGame()
+            proceed = prompt("Do You Want To Play Again?\n1.Yes\n2.No")
+        }
 
     </script>
 </body>
