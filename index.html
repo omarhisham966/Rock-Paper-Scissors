@@ -6,9 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div>
+        <button id="rockButton">Rock</button>
+        <button id="paperButton">Paper</button>
+        <button id="scissorsButton">Scissors</button>
+    </div>
+
     <script>
         let humanScore = 0
         let computerScore = 0
+
+
 
         function getComputerChoice(){
 
@@ -53,30 +62,30 @@
             }
         }
 
-        function playGame(){
-            for(let i=0;i<5;i++){
+        // function playGame(){
+        //     for(let i=0;i<5;i++){
         
-                let humanSelection = getHumanChoice();
-                let computerSelection = getComputerChoice();
-                playRound(humanSelection, computerSelection)
+        //         let humanSelection = getHumanChoice();
+        //         let computerSelection = getComputerChoice();
+        //         playRound(humanSelection, computerSelection)
         
-            }
+        //     }
     
-            if (humanScore > computerScore) {
-                alert('You Are the Winner! ' + humanScore + " - " + computerScore)
-            }
+        //     if (humanScore > computerScore) {
+        //         alert('You Are the Winner! ' + humanScore + " - " + computerScore)
+        //     }
 
-            else if (computerScore > humanScore){
-                alert('Computer is the Winner! ' + humanScore + " - " + computerScore)
-            }
+        //     else if (computerScore > humanScore){
+        //         alert('Computer is the Winner! ' + humanScore + " - " + computerScore)
+        //     }
 
-            else {alert("IT IS A TIE " + humanScore + " - " + computerScore)}
+        //     else {alert("IT IS A TIE " + humanScore + " - " + computerScore)}
 
-        }
+        // }
 
-        playGame()
+        // playGame()
 
-        let proceed = prompt("Do You Want To Play Again?\nYes\nNo")
+        // let proceed = prompt("Do You Want To Play Again?\nYes\nNo")
 
         while(proceed.toLowerCase() !== "no"){
             humanScore = 0
