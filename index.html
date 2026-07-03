@@ -7,38 +7,78 @@
 </head>
 <body>
 
-    <div>
-        <button id="rockButton">Rock</button>
-        <button id="paperButton">Paper</button>
-        <button id="scissorsButton">Scissors</button>
+    <div id="gameButtons">
+        <button class="rockButton">Rock</button>
+        <button class="paperButton">Paper</button>
+        <button class="scissorsButton">Scissors</button>
     </div>
 
     <script>
         let humanScore = 0
         let computerScore = 0
 
+        const gameButtons = document.querySelector("#gameButtons") 
+        const rockButton = document.querySelector(".rockButton")
+        const paperButton = document.querySelector(".paperButton")
+        const scissorsButton = document.querySelector(".scissorsButton")
 
+         function getComputerChoice(){
 
-        function getComputerChoice(){
+             let choice = Math.floor(Math.random()*3)
 
-            let choice = Math.floor(Math.random()*3)
+             if(choice === 0){
+                 return "rock"
+             }
 
-            if(choice === 0){
-                return "rock"
-            }
-
-            else if(choice === 1){
-                return "paper"
-            }
+             else if(choice === 1){
+                 return "paper"
+             }
             
-            else {return "scissors"}
-        }
+             else {return "scissors"}
+         }
 
-        function getHumanChoice(){
-            let choice = prompt("Please Enter Your Choice: \n -ROCK\n -PAPER\n -SCISSORS")
+        
+        rockButton.style.backgroundColor = "#FF7F50 ";
+        rockButton.style.border = "0px";
+        rockButton.style.color = "white"
+        rockButton.style.width = "60px"
+        rockButton.style.height = "40px"
+        rockButton.style.borderRadius = "50%"
 
-            return choice.toLowerCase()
-        }
+        paperButton.style.backgroundColor = "#DADD98";
+        paperButton.style.border = "0px";
+        paperButton.style.color = "white"
+        paperButton.style.width = "60px"
+        paperButton.style.height = "40px"
+        paperButton.style.borderRadius = "50%"
+
+
+        scissorsButton.style.backgroundColor = "#7B68EE";
+        scissorsButton.style.border = "0px";
+        scissorsButton.style.color = "white"
+        scissorsButton.style.width = "60px"
+        scissorsButton.style.height = "40px"
+        scissorsButton.style.borderRadius = "50%"
+
+
+        
+
+        rockButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
+            playRound("rock", computerChoice);
+        })
+        paperButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
+            playRound("paper", computerChoice)})
+        scissorsButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
+            playRound("rock", computerChoice)})
+        
+        
+         // function getHumanChoice(){
+        //     let choice = prompt("Please Enter Your Choice: \n -ROCK\n -PAPER\n -SCISSORS")
+
+        //     return choice.toLowerCase()
+        // }
+
+
 
         function playRound(humanChoice, computerChoice){
 
@@ -87,14 +127,14 @@
 
         // let proceed = prompt("Do You Want To Play Again?\nYes\nNo")
 
-        while(proceed.toLowerCase() !== "no"){
-            humanScore = 0
-            computerScore = 0
-            playGame()
-            proceed = prompt("Do You Want To Play Again?\nYes\nNo")
-        }
+        // while(proceed.toLowerCase() !== "no"){
+        //     humanScore = 0
+        //     computerScore = 0
+        //     playGame()
+        //     proceed = prompt("Do You Want To Play Again?\nYes\nNo")
+        // }
 
-        alert("Bye")
+        // alert("Bye")
 
     </script>
 </body>
