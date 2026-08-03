@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Rock Paper Scissors</h1>
 
-    <div id="gameButtons">
+    <div class="gameButtons">
         <button class="rockButton">Rock</button>
         <button class="paperButton">Paper</button>
         <button class="scissorsButton">Scissors</button>
     </div>
 
-    <script>
+    <div class="game-dashboard">
+
+        <div class="score-bar">
+            <p>Human: <span id="human-score">0</span></p>
+            <p>Computer: <span id="computer-score">0</span></p>
+        </div>
+
+        <div class="game-info">
+            <p>Choose Your Move Wisely</p>
+            <p>Current Round</p>
+            <p><span id="round">1</span>/5</p>
+        </div>
+
+        <div class="results-bar">
+            <p>Your Choice: <span id="human-choice">Scissors</span></p>
+
+            <p>Computer's Choice: <span id="computer-choice">Scissors</span></p>
+
+            <p>Result: <span id="round-result">Computer wins the round</span></p>
+            
+        </div>
+    </div>
+
+    <button class="new-game">Try Again</button>
+
+    <script src="script.js" defer></script>
+    <script>/*
         let humanScore = 0
         let computerScore = 0
 
@@ -36,40 +64,17 @@
             
              else {return "scissors"}
          }
-
-        
-        rockButton.style.backgroundColor = "#FF7F50 ";
-        rockButton.style.border = "0px";
-        rockButton.style.color = "white"
-        rockButton.style.width = "60px"
-        rockButton.style.height = "40px"
-        rockButton.style.borderRadius = "50%"
-
-        paperButton.style.backgroundColor = "#DADD98";
-        paperButton.style.border = "0px";
-        paperButton.style.color = "white"
-        paperButton.style.width = "60px"
-        paperButton.style.height = "40px"
-        paperButton.style.borderRadius = "50%"
-
-
-        scissorsButton.style.backgroundColor = "#7B68EE";
-        scissorsButton.style.border = "0px";
-        scissorsButton.style.color = "white"
-        scissorsButton.style.width = "60px"
-        scissorsButton.style.height = "40px"
-        scissorsButton.style.borderRadius = "50%"
-
-
         
 
         rockButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
             playRound("rock", computerChoice);
         })
+       
         paperButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
             playRound("paper", computerChoice)})
+       
         scissorsButton.addEventListener('click',() => {let computerChoice = getComputerChoice();
-            playRound("rock", computerChoice)})
+            playRound("scissors", computerChoice)})
         
         
          // function getHumanChoice(){
@@ -99,6 +104,12 @@
                 computerScore++
                 alert(`You Lose! ${computerChoice} beats ${humanChoice}, The Score is ${humanScore} : ${computerScore}`)
                         
+            }
+        }
+
+        function announceWinner(humanScore,computerScore){
+            if (humanScore === 5 || computerScore === 5){
+                
             }
         }
 
@@ -136,6 +147,6 @@
 
         // alert("Bye")
 
-    </script>
+    */</script>
 </body>
 </html>
