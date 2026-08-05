@@ -90,5 +90,23 @@ h1{
 
 }
 
+#match-over{
+    color:#00F5D4;
+    font-size:38px;
+    font-weight:bold;
+    text-align: center;
+}
 
+#final-score{
+    color:#00F5D4;
+    font-size:30px;
+    font-weight:bold;
+    text-align: center;
+}
 
+#reason{
+    color:#00F5D4;
+    font-size:30px;
+    font-weight:bold;
+    text-align: center;
+}
